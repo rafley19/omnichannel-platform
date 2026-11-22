@@ -31,17 +31,20 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-100 px-4 py-12">
-      <div className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+    <div className="min-h-screen flex items-center justify-center bg-[#0B3B3C] px-4 py-12 relative overflow-hidden">
+      <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-[#2ED47A]/10 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-[#194F50]/60 blur-3xl" />
+
+      <div className="relative w-full max-w-md rounded-[24px] border border-[#E5EFEF] bg-white p-8 shadow-2xl">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-white">
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#0B3B3C] text-[#38E587] shadow-sm">
             <Layers className="h-5 w-5" />
           </div>
           <div>
-            <h1 className="text-lg font-semibold text-slate-900 leading-tight">
+            <h1 className="text-lg font-bold text-[#0B2D2E] leading-tight">
               Omnichannel Platform
             </h1>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-[#567475]">
               Pusat Operasional Multi-Usaha
             </p>
           </div>
@@ -49,7 +52,7 @@ export default function LoginPage() {
 
         <form onSubmit={handleSubmit} className="mt-7 space-y-4">
           {errorMsg && (
-            <div className="flex items-start gap-2 rounded-lg border border-rose-200 bg-rose-50 px-3.5 py-2.5 text-xs text-rose-800">
+            <div className="flex items-start gap-2 rounded-xl border border-rose-200 bg-rose-50 px-3.5 py-2.5 text-xs text-rose-800">
               <AlertCircle className="h-4 w-4 shrink-0 mt-0.5 text-rose-600" />
               <span>{errorMsg}</span>
             </div>
@@ -58,12 +61,12 @@ export default function LoginPage() {
           <div>
             <label
               htmlFor="login-email"
-              className="block text-xs font-medium text-slate-700 mb-1.5"
+              className="block text-xs font-medium text-[#2A4D4E] mb-1.5"
             >
               Email Akun
             </label>
             <div className="relative">
-              <Mail className="h-4 w-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <Mail className="h-4 w-4 text-[#7A9899] absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 id="login-email"
                 type="email"
@@ -72,7 +75,7 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="owner@omnichannel.local"
-                className="w-full rounded-lg border border-slate-300 pl-9 pr-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900/10"
+                className="w-full rounded-xl border border-[#D5E3E3] pl-10 pr-3.5 py-2.5 text-sm text-[#0B2D2E] placeholder:text-[#8DA9AA] focus:border-[#0B3B3C] focus:outline-none focus:ring-2 focus:ring-[#0B3B3C]/10"
               />
             </div>
           </div>
@@ -80,12 +83,12 @@ export default function LoginPage() {
           <div>
             <label
               htmlFor="login-password"
-              className="block text-xs font-medium text-slate-700 mb-1.5"
+              className="block text-xs font-medium text-[#2A4D4E] mb-1.5"
             >
               Password
             </label>
             <div className="relative">
-              <Lock className="h-4 w-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <Lock className="h-4 w-4 text-[#7A9899] absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 id="login-password"
                 type="password"
@@ -94,7 +97,7 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Masukkan password"
-                className="w-full rounded-lg border border-slate-300 pl-9 pr-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900/10"
+                className="w-full rounded-xl border border-[#D5E3E3] pl-10 pr-3.5 py-2.5 text-sm text-[#0B2D2E] placeholder:text-[#8DA9AA] focus:border-[#0B3B3C] focus:outline-none focus:ring-2 focus:ring-[#0B3B3C]/10"
               />
             </div>
           </div>
@@ -102,16 +105,16 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-medium text-white hover:bg-slate-800 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+            className="w-full rounded-xl bg-[#0B3B3C] px-4 py-2.5 text-sm font-medium text-white hover:bg-[#134E4F] disabled:opacity-60 disabled:cursor-not-allowed transition-colors shadow-sm"
           >
             {submitting ? 'Memverifikasi...' : 'Masuk ke Platform'}
           </button>
         </form>
 
-        <div className="mt-6 rounded-lg border border-slate-200 bg-slate-50 px-3.5 py-3 text-[11px] text-slate-600 leading-relaxed">
-          <p className="font-semibold text-slate-700">Keamanan Kredensial:</p>
+        <div className="mt-6 rounded-xl border border-[#E5EFEF] bg-[#F4F7F6] px-3.5 py-3 text-[11px] text-[#4E6E6F] leading-relaxed">
+          <p className="font-semibold text-[#0B2D2E]">Keamanan Kredensial:</p>
           <p className="mt-0.5">
-            Akun utama dikonfigurasi melalui Environment Variables (<code className="font-mono text-slate-800">OWNER_EMAIL</code> &amp; <code className="font-mono text-slate-800">OWNER_PASSWORD</code>) dan password disimpan dalam bentuk hash Bcrypt terisolasi di Neon PostgreSQL.
+            Akun utama dikonfigurasi melalui Environment Variables (<code className="font-mono text-[#0B3B3C]">OWNER_EMAIL</code> &amp; <code className="font-mono text-[#0B3B3C]">OWNER_PASSWORD</code>) dan password disimpan dalam bentuk hash Bcrypt terisolasi di Neon PostgreSQL.
           </p>
         </div>
       </div>

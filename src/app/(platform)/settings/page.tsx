@@ -69,17 +69,17 @@ export default function SettingsPage() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-          <h1 className="text-xl font-semibold text-slate-900 tracking-tight">
+          <h1 className="text-2xl font-bold text-[#0B2D2E] tracking-tight">
             Settings & Database Adapter
           </h1>
-          <p className="mt-0.5 text-xs text-slate-500">
+          <p className="mt-0.5 text-xs text-[#567475]">
             Informasi akun, status lapisan penyimpanan data (Adapter Pattern), dan kesiapan migrasi.
           </p>
         </div>
         <button
           type="button"
           onClick={loadStatus}
-          className="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50"
+          className="inline-flex items-center gap-1.5 rounded-xl border border-[#D5E3E3] bg-white px-3.5 py-2 text-xs font-medium text-[#0B3B3C] hover:bg-[#F4F7F6] transition-colors"
         >
           <RefreshCw className={`h-3.5 w-3.5 ${loading ? 'animate-spin' : ''}`} />
           Cek Ulang Koneksi
@@ -88,55 +88,55 @@ export default function SettingsPage() {
 
       {/* Account & Security Card */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="rounded-xl border border-slate-200 bg-white p-5 space-y-2">
-          <div className="flex items-center gap-2 text-slate-900">
-            <ShieldCheck className="h-4 w-4 text-emerald-600" />
+        <div className="rounded-2xl border border-[#E5EFEF] bg-white p-5 space-y-2 shadow-[0_2px_10px_rgba(11,59,60,0.03)]">
+          <div className="flex items-center gap-2 text-[#0B2D2E]">
+            <ShieldCheck className="h-4 w-4 text-[#2ED47A]" />
             <h2 className="text-sm font-semibold">Profil & Keamanan Akun</h2>
           </div>
           <div className="pt-2 space-y-1.5 text-xs">
-            <p className="text-slate-600">
-              Nama: <span className="font-medium text-slate-900">{user?.fullName}</span>
+            <p className="text-[#567475]">
+              Nama: <span className="font-medium text-[#0B2D2E]">{user?.fullName}</span>
             </p>
-            <p className="text-slate-600">
-              Email: <span className="font-mono text-slate-900">{user?.email}</span>
+            <p className="text-[#567475]">
+              Email: <span className="font-mono text-[#0B2D2E]">{user?.email}</span>
             </p>
-            <p className="text-slate-600">
+            <p className="text-[#567475]">
               Role Global:{' '}
-              <span className="font-medium uppercase text-slate-900">
+              <span className="font-medium uppercase text-[#0B2D2E]">
                 {user?.globalRole}
               </span>
             </p>
           </div>
-          <p className="pt-2 text-[11px] text-slate-500 leading-relaxed">
+          <p className="pt-2 text-[11px] text-[#567475] leading-relaxed">
             Hash password Bcrypt disimpan terisolasi pada tabel{' '}
-            <code className="font-mono text-slate-700">auth_credentials</code> di Neon PostgreSQL (100% aman untuk Vercel Serverless tanpa penulisan file lokal).
+            <code className="font-mono text-[#0B3B3C]">auth_credentials</code> di Neon PostgreSQL (100% aman untuk Vercel Serverless tanpa penulisan file lokal).
           </p>
         </div>
 
-        <div className="rounded-xl border border-slate-200 bg-white p-5 space-y-2">
-          <div className="flex items-center gap-2 text-slate-900">
-            <Database className="h-4 w-4 text-slate-700" />
+        <div className="rounded-2xl border border-[#E5EFEF] bg-white p-5 space-y-2 shadow-[0_2px_10px_rgba(11,59,60,0.03)]">
+          <div className="flex items-center gap-2 text-[#0B2D2E]">
+            <Database className="h-4 w-4 text-[#0B3B3C]" />
             <h2 className="text-sm font-semibold">Arsitektur Adapter Database</h2>
           </div>
           {loading ? (
-            <div className="h-16 animate-pulse rounded-lg bg-slate-100" />
+            <div className="h-16 animate-pulse rounded-xl bg-[#EDF3F3]" />
           ) : status ? (
             <div className="pt-2 space-y-1.5 text-xs">
-              <p className="text-slate-600">
+              <p className="text-[#567475]">
                 Provider Aktif:{' '}
-                <span className="rounded bg-slate-900 px-2 py-0.5 font-mono text-[11px] font-medium text-white uppercase">
+                <span className="rounded-full bg-[#0B3B3C] px-2.5 py-0.5 font-mono text-[11px] font-medium text-white uppercase">
                   {status.health.provider}
                 </span>
               </p>
-              <p className="text-slate-600">
+              <p className="text-[#567475]">
                 ACID Transaction:{' '}
-                <span className="font-medium text-slate-900">
+                <span className="font-medium text-[#0B2D2E]">
                   {status.supportsTransactions
                     ? 'Native PostgreSQL'
                     : 'Serialized Keyed Mutex Lock (Mode Pilot)'}
                 </span>
               </p>
-              <p className="text-[11px] text-slate-500 pt-1">
+              <p className="text-[11px] text-[#567475] pt-1">
                 {status.health.message}
               </p>
             </div>
@@ -150,13 +150,13 @@ export default function SettingsPage() {
       {loading && !status ? (
         <TableSkeleton rows={5} />
       ) : status ? (
-        <div className="rounded-xl border border-slate-200 bg-white overflow-hidden">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 px-5 py-4">
+        <div className="rounded-2xl border border-[#E5EFEF] bg-white overflow-hidden shadow-[0_2px_10px_rgba(11,59,60,0.03)]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#E5EFEF] px-5 py-4">
             <div>
-              <h2 className="text-sm font-semibold text-slate-900">
+              <h2 className="text-sm font-semibold text-[#0B2D2E]">
                 Status 14 Tabel Operasional (Neon PostgreSQL Ready)
               </h2>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-[#567475]">
                 Skema tabel otomatis dibuat saat login pertama kali, atau verifikasi ulang secara aman (idempoten) kapan saja di sini.
               </p>
             </div>
@@ -165,7 +165,7 @@ export default function SettingsPage() {
                 type="button"
                 disabled={initializing}
                 onClick={handleInitSchema}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-slate-900 px-3.5 py-2 text-xs font-medium text-white hover:bg-slate-800 disabled:opacity-60"
+                className="inline-flex items-center gap-1.5 rounded-xl bg-[#0B3B3C] px-3.5 py-2 text-xs font-medium text-white hover:bg-[#134E4F] disabled:opacity-60 transition-colors"
               >
                 <Wrench className="h-3.5 w-3.5" />
                 {initializing ? 'Memverifikasi...' : 'Inisialisasi / Verifikasi 14 Tabel'}
@@ -177,19 +177,19 @@ export default function SettingsPage() {
             {Object.entries(status.health.tables).map(([tableName, count]) => (
               <div
                 key={tableName}
-                className="flex items-center justify-between rounded-lg border border-slate-200 bg-slate-50/70 px-3 py-2.5 text-xs"
+                className="flex items-center justify-between rounded-xl border border-[#E5EFEF] bg-[#F4F8F8] px-3 py-2.5 text-xs"
               >
                 <div className="flex items-center gap-2 min-w-0">
                   <CheckCircle2
                     className={`h-3.5 w-3.5 shrink-0 ${
-                      count >= 0 ? 'text-emerald-600' : 'text-rose-500'
+                      count >= 0 ? 'text-[#2ED47A]' : 'text-rose-500'
                     }`}
                   />
-                  <span className="truncate font-mono text-[11px] font-medium text-slate-800">
+                  <span className="truncate font-mono text-[11px] font-medium text-[#0B2D2E]">
                     {tableName}
                   </span>
                 </div>
-                <span className="font-semibold tabular-nums text-slate-600 ml-2">
+                <span className="font-semibold tabular-nums text-[#355A5B] ml-2">
                   {count >= 0 ? count : 'N/A'}
                 </span>
               </div>

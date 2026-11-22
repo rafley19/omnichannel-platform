@@ -197,7 +197,7 @@ export default function BusinessesPage() {
     <div className="space-y-5">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-          <h1 className="text-xl font-semibold text-slate-900 tracking-tight">
+          <h1 className="text-2xl font-bold text-[#0B2D2E] tracking-tight">
             Business Management
           </h1>
           <p className="mt-0.5 text-xs text-slate-500">
@@ -208,7 +208,7 @@ export default function BusinessesPage() {
           <button
             type="button"
             onClick={() => setCreateOpen(true)}
-            className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-slate-900 px-3.5 py-2 text-xs font-medium text-white hover:bg-slate-800 transition-colors"
+            className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#0B3B3C] px-3.5 py-2 text-xs font-medium text-white hover:bg-[#134E4F] transition-colors"
           >
             <Plus className="h-4 w-4" />
             Tambah Usaha Baru
@@ -224,7 +224,7 @@ export default function BusinessesPage() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Cari nama, kode, atau bidang usaha..."
-            className="w-full rounded-lg border border-slate-300 bg-white pl-9 pr-3 py-2 text-xs text-slate-900 placeholder:text-slate-400 focus:border-slate-900 focus:outline-none"
+            className="w-full rounded-lg border border-slate-300 bg-white pl-9 pr-3 py-2 text-xs text-slate-900 placeholder:text-slate-400 focus:border-[#0B3B3C] focus:outline-none"
           />
         </div>
       </div>
@@ -240,7 +240,7 @@ export default function BusinessesPage() {
               <button
                 type="button"
                 onClick={() => setCreateOpen(true)}
-                className="rounded-lg bg-slate-900 px-4 py-2 text-xs font-medium text-white hover:bg-slate-800"
+                className="rounded-lg bg-[#0B3B3C] px-4 py-2 text-xs font-medium text-white hover:bg-[#134E4F]"
               >
                 Tambah Usaha Sekarang
               </button>
@@ -254,7 +254,7 @@ export default function BusinessesPage() {
             return (
               <div
                 key={b.id}
-                className="rounded-xl border border-slate-200 bg-white p-5 flex flex-col justify-between hover:border-slate-300 transition-colors"
+                className="rounded-2xl border border-[#E5EFEF] bg-white p-5 flex flex-col justify-between shadow-[0_2px_10px_rgba(11,59,60,0.03)] hover:border-[#C9DADA] transition-colors"
               >
                 <div>
                   <div className="flex items-start justify-between gap-2">
@@ -340,7 +340,7 @@ export default function BusinessesPage() {
                 value={code}
                 onChange={(e) => setCode(e.target.value.toUpperCase())}
                 placeholder="Misal: FSH01"
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs font-mono uppercase focus:border-slate-900 focus:outline-none"
+                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs font-mono uppercase focus:border-[#0B3B3C] focus:outline-none"
               />
             </div>
             <div>
@@ -360,7 +360,7 @@ export default function BusinessesPage() {
                     setPrimaryLocType('store');
                   }
                 }}
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs focus:border-slate-900 focus:outline-none"
+                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs focus:border-[#0B3B3C] focus:outline-none"
               >
                 <option value="fashion">Fashion</option>
                 <option value="fnb">Makanan & Minuman (F&B)</option>
@@ -381,7 +381,7 @@ export default function BusinessesPage() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Contoh: Khaluna Fashion Studio"
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs focus:border-slate-900 focus:outline-none"
+              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs focus:border-[#0B3B3C] focus:outline-none"
             />
           </div>
 
@@ -395,7 +395,7 @@ export default function BusinessesPage() {
                 value={contactEmail}
                 onChange={(e) => setContactEmail(e.target.value)}
                 placeholder="ops@usaha.com"
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs focus:border-slate-900 focus:outline-none"
+                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs focus:border-[#0B3B3C] focus:outline-none"
               />
             </div>
             <div>
@@ -407,7 +407,7 @@ export default function BusinessesPage() {
                 value={contactPhone}
                 onChange={(e) => setContactPhone(e.target.value)}
                 placeholder="0812xxxxxxxx"
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs focus:border-slate-900 focus:outline-none"
+                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs focus:border-[#0B3B3C] focus:outline-none"
               />
             </div>
           </div>
@@ -420,7 +420,7 @@ export default function BusinessesPage() {
               rows={2}
               value={address}
               onChange={(e) => setAddress(e.target.value)}
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs focus:border-slate-900 focus:outline-none"
+              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs focus:border-[#0B3B3C] focus:outline-none"
             />
           </div>
 
@@ -434,12 +434,12 @@ export default function BusinessesPage() {
                 value={primaryLocName}
                 onChange={(e) => setPrimaryLocName(e.target.value)}
                 placeholder="Nama lokasi utama"
-                className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs focus:border-slate-900 focus:outline-none"
+                className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs focus:border-[#0B3B3C] focus:outline-none"
               />
               <select
                 value={primaryLocType}
                 onChange={(e) => setPrimaryLocType(e.target.value as LocationType)}
-                className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs focus:border-slate-900 focus:outline-none"
+                className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs focus:border-[#0B3B3C] focus:outline-none"
               >
                 <option value="store">Toko Fisik</option>
                 <option value="warehouse">Gudang</option>
@@ -484,7 +484,7 @@ export default function BusinessesPage() {
             <button
               type="submit"
               disabled={submitting}
-              className="rounded-lg bg-slate-900 px-4 py-2 text-xs font-medium text-white hover:bg-slate-800 disabled:opacity-60"
+              className="rounded-lg bg-[#0B3B3C] px-4 py-2 text-xs font-medium text-white hover:bg-[#134E4F] disabled:opacity-60"
             >
               {submitting ? 'Menyimpan...' : 'Simpan Usaha'}
             </button>
@@ -514,7 +514,7 @@ export default function BusinessesPage() {
                   required
                   value={editName}
                   onChange={(e) => setEditName(e.target.value)}
-                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs focus:border-slate-900 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs focus:border-[#0B3B3C] focus:outline-none"
                 />
               </div>
               <div className="grid grid-cols-2 gap-3">
@@ -592,7 +592,7 @@ export default function BusinessesPage() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full rounded-lg bg-slate-900 py-2 text-xs font-medium text-white hover:bg-slate-800 disabled:opacity-60"
+                className="w-full rounded-lg bg-[#0B3B3C] py-2 text-xs font-medium text-white hover:bg-[#134E4F] disabled:opacity-60"
               >
                 {submitting ? 'Menyimpan...' : 'Simpan Perubahan Usaha'}
               </button>
@@ -681,7 +681,7 @@ export default function BusinessesPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full rounded-lg border border-slate-900 py-1.5 text-xs font-medium text-slate-900 hover:bg-slate-900 hover:text-white transition-colors disabled:opacity-60"
+                  className="w-full rounded-xl border border-[#0B3B3C] py-2 text-xs font-medium text-[#0B3B3C] hover:bg-[#0B3B3C] hover:text-white transition-colors disabled:opacity-60"
                 >
                   Tambah Lokasi
                 </button>

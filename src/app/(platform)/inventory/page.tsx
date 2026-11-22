@@ -154,7 +154,7 @@ export default function InventoryPage() {
     <div className="space-y-5">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-          <h1 className="text-xl font-semibold text-slate-900 tracking-tight">
+          <h1 className="text-2xl font-bold text-[#0B2D2E] tracking-tight">
             Inventory Management
           </h1>
           <p className="mt-0.5 text-xs text-slate-500">
@@ -165,7 +165,7 @@ export default function InventoryPage() {
           type="button"
           disabled={businesses.length === 0}
           onClick={() => openMovementModal()}
-          className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-slate-900 px-3.5 py-2 text-xs font-medium text-white hover:bg-slate-800 disabled:opacity-50 transition-colors"
+          className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#0B3B3C] px-3.5 py-2 text-xs font-medium text-white hover:bg-[#134E4F] disabled:opacity-50 transition-colors"
         >
           <ArrowDownUp className="h-4 w-4" />
           Catat Pergerakan Stok
@@ -174,13 +174,13 @@ export default function InventoryPage() {
 
       {/* Tabs & Filters */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
-        <div className="inline-flex rounded-lg border border-slate-200 bg-white p-1 w-fit">
+        <div className="inline-flex rounded-xl border border-[#E5EFEF] bg-white p-1 w-fit">
           <button
             type="button"
             onClick={() => setTab('balances')}
             className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${
               tab === 'balances'
-                ? 'bg-slate-900 text-white'
+                ? 'bg-[#0B3B3C] text-white'
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
@@ -192,7 +192,7 @@ export default function InventoryPage() {
             onClick={() => setTab('ledger')}
             className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${
               tab === 'ledger'
-                ? 'bg-slate-900 text-white'
+                ? 'bg-[#0B3B3C] text-white'
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
@@ -210,7 +210,7 @@ export default function InventoryPage() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Cari produk, SKU, lokasi..."
-                className="rounded-lg border border-slate-300 bg-white pl-9 pr-3 py-1.5 text-xs focus:border-slate-900 focus:outline-none"
+                className="rounded-lg border border-slate-300 bg-white pl-9 pr-3 py-1.5 text-xs focus:border-[#0B3B3C] focus:outline-none"
               />
             </div>
             <label className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer">
@@ -240,7 +240,7 @@ export default function InventoryPage() {
                 <button
                   type="button"
                   onClick={() => openMovementModal()}
-                  className="rounded-lg bg-slate-900 px-4 py-2 text-xs font-medium text-white hover:bg-slate-800"
+                  className="rounded-lg bg-[#0B3B3C] px-4 py-2 text-xs font-medium text-white hover:bg-[#134E4F]"
                 >
                   Catat Stok Masuk
                 </button>
@@ -248,10 +248,10 @@ export default function InventoryPage() {
             }
           />
         ) : (
-          <div className="rounded-xl border border-slate-200 bg-white overflow-hidden">
+          <div className="rounded-2xl border border-[#E5EFEF] bg-white overflow-hidden shadow-[0_2px_10px_rgba(11,59,60,0.03)]">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs">
-                <thead className="bg-slate-50 text-slate-500 border-b border-slate-200">
+                <thead className="bg-[#F4F8F8] text-[#4E6E6F] border-b border-[#E5EFEF]">
                   <tr>
                     <th className="px-4 py-3 font-medium">Produk & SKU</th>
                     <th className="px-4 py-3 font-medium">Usaha / Lokasi</th>
@@ -318,10 +318,10 @@ export default function InventoryPage() {
           description="Setiap stok masuk, penjualan, pembatalan, maupun penyesuaian akan tercatat permanen di sini."
         />
       ) : (
-        <div className="rounded-xl border border-slate-200 bg-white overflow-hidden">
+        <div className="rounded-2xl border border-[#E5EFEF] bg-white overflow-hidden shadow-[0_2px_10px_rgba(11,59,60,0.03)]">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
-              <thead className="bg-slate-50 text-slate-500 border-b border-slate-200">
+              <thead className="bg-[#F4F8F8] text-[#4E6E6F] border-b border-[#E5EFEF]">
                 <tr>
                   <th className="px-4 py-3 font-medium">Waktu (WIB)</th>
                   <th className="px-4 py-3 font-medium">Usaha / Produk</th>
@@ -505,7 +505,7 @@ export default function InventoryPage() {
             <button
               type="submit"
               disabled={submitting || formProducts.length === 0}
-              className="rounded-lg bg-slate-900 px-4 py-2 text-xs font-medium text-white hover:bg-slate-800 disabled:opacity-60"
+              className="rounded-lg bg-[#0B3B3C] px-4 py-2 text-xs font-medium text-white hover:bg-[#134E4F] disabled:opacity-60"
             >
               {submitting ? 'Mencatat...' : 'Simpan Mutasi Stok'}
             </button>

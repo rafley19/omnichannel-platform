@@ -4,6 +4,8 @@ import { handleApiError, okResponse } from '@/lib/api-response';
 import { getClientIp } from '@/lib/rate-limit';
 import { getBusinessById, updateBusiness } from '@/services/business.service';
 
+export const dynamic = 'force-dynamic';
+
 const updateBusinessSchema = z.object({
   name: z.string().min(2).max(120).optional(),
   category: z.enum(['fashion', 'fnb', 'service', 'retail', 'other']).optional(),

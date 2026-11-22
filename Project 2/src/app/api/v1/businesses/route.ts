@@ -4,6 +4,8 @@ import { handleApiError, okResponse } from '@/lib/api-response';
 import { enforceRateLimit, getClientIp } from '@/lib/rate-limit';
 import { createBusiness, listBusinesses } from '@/services/business.service';
 
+export const dynamic = 'force-dynamic';
+
 const createBusinessSchema = z.object({
   code: z
     .string()

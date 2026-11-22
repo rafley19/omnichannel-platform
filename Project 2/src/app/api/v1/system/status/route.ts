@@ -4,6 +4,8 @@ import { handleApiError, okResponse } from '@/lib/api-response';
 import { getClientIp } from '@/lib/rate-limit';
 import { recordAuditLog } from '@/services/audit.service';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
     await requireAuth();

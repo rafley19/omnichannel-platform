@@ -4,6 +4,8 @@ import { handleApiError, okResponse } from '@/lib/api-response';
 import { getClientIp } from '@/lib/rate-limit';
 import { getOrderById, updateOrderStatus } from '@/services/order.service';
 
+export const dynamic = 'force-dynamic';
+
 const updateOrderSchema = z.object({
   order_status: z.enum([
     'pending',

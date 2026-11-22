@@ -4,6 +4,8 @@ import { handleApiError, okResponse } from '@/lib/api-response';
 import { getClientIp } from '@/lib/rate-limit';
 import { cancelOrder } from '@/services/order.service';
 
+export const dynamic = 'force-dynamic';
+
 const cancelSchema = z.object({
   reason: z.string().max(300).optional(),
 });

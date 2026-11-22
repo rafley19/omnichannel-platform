@@ -8,6 +8,8 @@ import { handleApiError, okResponse } from '@/lib/api-response';
 import { enforceRateLimit, getClientIp } from '@/lib/rate-limit';
 import { recordAuditLog } from '@/services/audit.service';
 
+export const dynamic = 'force-dynamic';
+
 const loginSchema = z.object({
   email: z.string().email('Format email tidak valid.'),
   password: z.string().min(6, 'Password minimal 6 karakter.'),

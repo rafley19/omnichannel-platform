@@ -35,6 +35,14 @@ export function errorResponse(
 }
 
 export function handleApiError(err: unknown): NextResponse {
+  // Never swallow Next.js internal control-flow/static-detection signals
+  if (err && typeof err === 'object' && 'digest' in err) {
+    const digest = String((err as { digest?: unknown }).digest ?? '');
+    if (digest === 'DYNAMIC_SERVER_USAGE' || digest.startsWith('NEXT_')) {
+      throw err;
+    }
+  }
+
   if (err instanceof AppError) {
     return errorResponse(err.code, err.message, err.statusCode, err.details);
   }

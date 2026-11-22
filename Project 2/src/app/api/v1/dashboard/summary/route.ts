@@ -3,6 +3,8 @@ import { handleApiError, okResponse } from '@/lib/api-response';
 import { enforceRateLimit } from '@/lib/rate-limit';
 import { getDashboardSummary } from '@/services/dashboard.service';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: Request) {
   try {
     enforceRateLimit(request, 'dashboard:summary', 120, 60_000);

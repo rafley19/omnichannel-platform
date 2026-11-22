@@ -7,6 +7,8 @@ import {
   recordStockMovement,
 } from '@/services/inventory.service';
 
+export const dynamic = 'force-dynamic';
+
 const movementSchema = z.object({
   business_id: z.string().min(3),
   product_id: z.string().min(3),

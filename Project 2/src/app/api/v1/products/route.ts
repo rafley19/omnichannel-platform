@@ -4,6 +4,8 @@ import { handleApiError, okResponse } from '@/lib/api-response';
 import { enforceRateLimit, getClientIp } from '@/lib/rate-limit';
 import { createProduct, listProducts } from '@/services/product.service';
 
+export const dynamic = 'force-dynamic';
+
 const createProductSchema = z.object({
   business_id: z.string().min(3),
   sku: z.string().min(2, 'SKU minimal 2 karakter.').max(40),

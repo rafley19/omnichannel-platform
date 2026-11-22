@@ -4,6 +4,8 @@ import { handleApiError, okResponse } from '@/lib/api-response';
 import { getClientIp } from '@/lib/rate-limit';
 import { createLocation, listLocations } from '@/services/business.service';
 
+export const dynamic = 'force-dynamic';
+
 const createLocationSchema = z.object({
   code: z
     .string()

@@ -3,6 +3,8 @@ import { handleApiError, okResponse } from '@/lib/api-response';
 import { enforceRateLimit } from '@/lib/rate-limit';
 import { listInventory } from '@/services/inventory.service';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: Request) {
   try {
     enforceRateLimit(request, 'inventory:get', 120, 60_000);

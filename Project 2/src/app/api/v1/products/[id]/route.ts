@@ -4,6 +4,8 @@ import { handleApiError, okResponse } from '@/lib/api-response';
 import { getClientIp } from '@/lib/rate-limit';
 import { softDeleteProduct, updateProduct } from '@/services/product.service';
 
+export const dynamic = 'force-dynamic';
+
 const updateProductSchema = z.object({
   name: z.string().min(2).max(150).optional(),
   description: z.string().max(500).optional(),
